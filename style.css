@@ -1,0 +1,245 @@
+/* fonts */
+
+/* josefin-sans-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/josefin-sans-v32-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* alata-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Alata';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/alata-v11-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* assets */
+
+:root {
+    font-size: 62.5%;
+    --m-xxs: 8px;
+    --m-xs: 24px;
+    --m-s: 32px;
+    --m-m: 40px;
+    --m-xm: 64px;
+    --m-l: 80px;
+    --m-xl: 96px;
+    --m-xxl: 160px;
+}
+
+h1 {
+    font-size: 7.2rem;
+    font-family: 'Josefin sans', sans-serif;
+    text-transform: uppercase;
+    border: solid 1px #fff;
+    line-height: 1;
+    padding: var(--m-m);
+    max-width: 16ch;
+}
+h2 {
+    font-size: 4.8rem;
+    font-family: 'Josefin sans', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: var(--m-l);
+}
+h3 {
+    font-size: 3.2rem;
+    font-family: 'Josefin sans', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+}
+p {
+    font-size: 1.6rem;
+    font-family: 'Alata', sans-serif;
+    color: #00000086;
+    line-height: 1.5;
+}
+
+section {
+    padding-block: var(--m-xxl);
+}
+
+.global-container {
+    max-width: 1280px;
+    margin: auto;
+}
+
+nav {
+    font-size: 1.4rem;
+}
+nav > ul {
+    display: flex;
+    gap: var(--m-s);
+    align-items: center;
+}
+nav a {
+    color: #fff;
+    font-family: 'Alata', sans-serif;
+    position: relative;
+}
+nav a:hover::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 16px;
+    background-color: #fff;
+}
+
+.cta {
+    font-size: 1.4rem;
+    font-family: 'Alata', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    border: solid 1px #000;
+    letter-spacing: 5px;
+    padding: 1em 2.5em;
+}
+.cta:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* header */
+
+header {
+    position: absolute;
+    width: 100%;
+    padding-block: var(--m-xm);
+}
+
+header .global-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* section hero */
+
+.section-hero {
+    background: url('img/hero.jpg') no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding-top: calc(var(--m-xxl) + var(--m-xm));
+}
+
+
+/* section 2 */
+
+.section-2 .global-container {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.sct2-content {
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    max-width: 544px;
+    border-top: solid 96px #fff;
+    border-left: solid 96px #fff;
+    box-sizing: content-box;
+}
+
+.section-2 h2 {
+    margin-bottom: var(--m-xs);
+}
+
+
+/* section 3 */
+
+.section-3 .global-container {
+    position: relative;
+}
+
+.cta {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.sct3-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    gap: var(--m-s);
+}
+
+.item {
+    position: relative;
+    color: #fff;
+    position: relative;
+}
+.item:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0 0% 100% / 0.75);
+}
+.item:hover {
+    color: #000;
+}
+
+.item img {
+    width: 100%;
+}
+.item h3 {
+    position: absolute;
+    margin: var(--m-m);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #000;
+    padding-block: var(--m-m);
+}
+
+footer .global-container > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .global-container > div:first-child {
+    margin-bottom: var(--m-xs);
+}
+
+.socials-list {
+    display: flex;
+    gap: var(--m-xs);
+}
+.socials-list > * {
+    position: relative;
+}
+.socials-list > *:hover::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.copyright {
+    color: #ffffff86;
+}
